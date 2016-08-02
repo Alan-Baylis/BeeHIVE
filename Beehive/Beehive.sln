@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{17554069-9722-6130-329A-FCB6D381DD71}") = "Beehive", "Assembly-CSharp.csproj", "{3F9C6661-020E-0396-246D-26CAE4B5F5E2}"
+EndProject
+Project("{17554069-9722-6130-329A-FCB6D381DD71}") = "Beehive", "Assembly-CSharp-Editor.csproj", "{BA76294F-340F-E2D2-242A-24DE7FB621B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F9C6661-020E-0396-246D-26CAE4B5F5E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9C6661-020E-0396-246D-26CAE4B5F5E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9C6661-020E-0396-246D-26CAE4B5F5E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9C6661-020E-0396-246D-26CAE4B5F5E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA76294F-340F-E2D2-242A-24DE7FB621B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA76294F-340F-E2D2-242A-24DE7FB621B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA76294F-340F-E2D2-242A-24DE7FB621B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA76294F-340F-E2D2-242A-24DE7FB621B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
