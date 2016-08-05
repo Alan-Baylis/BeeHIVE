@@ -7,14 +7,14 @@ BeeHIVE is a behavior tree solution to model AI in Unity.
 Here is a tutorial on how to get BeeHIVE up and running on a project. This cover the basic nodes and features, but builds a foundation for tool usage.
 
 ## Project Setup
-Before we get started, we need the BeeHIVE files, if you downloaded the package from asset store, obviously you already have the files needed, and already imported to your project, so you are good to go. If you downloaded from the public repository, you can open the project that comes with it. After that its done, you can right click the BeeHIVE folder, located under the Assets folder, and click \textit{Export Package} as shown in figure bellow.
+Before we get started, we need the BeeHIVE files, if you downloaded the package from asset store, obviously you already have the files needed, and already imported to your project, so you are good to go. If you downloaded from the public repository, you can open the project that comes with it. After that its done, you can right click the BeeHIVE folder, located under the Assets folder, and click _Export Package_ as shown in figure bellow.
 
 
 ![]
 (imagens/expor.png)
 
 
-A pop-up window will appear, leave everything checked and click \textit{Export}. Chose a location and a name for the package, and click \textit{Save}. Now you have a package that can be imported in any project by  \textit{right clicking the Assets folder / Import Package / Custom Package}, as shown in figure bellow.
+A pop-up window will appear, leave everything checked and click _Export_. Chose a location and a name for the package, and click _Save_. Now you have a package that can be imported in any project by  _right clicking the Assets folder / Import Package / Custom Package_, as shown in figure bellow.
 
 
 ![]
@@ -28,12 +28,12 @@ What we are going to do its a simple AI that can play pong against a human, is w
 
 ### Project Overview
 
-The tutorial project have almost everything you need for the base game, the most important class being the \textit{PongController}, which holds all the methods related player capabilities, in this case, stuff that has to do with movement. The human controller inherits from this class to control his 'character' with keyboard input, and the AI we are about to create will it directly, but instead of using keyboard input, it will use commands defined in the behavior tree.
+The tutorial project have almost everything you need for the base game, the most important class being the _PongController_, which holds all the methods related player capabilities, in this case, stuff that has to do with movement. The human controller inherits from this class to control his 'character' with keyboard input, and the AI we are about to create will it directly, but instead of using keyboard input, it will use commands defined in the behavior tree.
 You can hit play now and control the player on the left with the arrow keys, but the AI wont give any trouble whatsoever.
 
 ### Creating a beehive agent
 
-Let's create a new C\# script and call it \textit{PongAI}. Add the script to the \textit{AIPlayer} object on the scene and open it up. This script will be the bridge between BeeHIVE and the \textit{PongController}, so the first thing we need to do is to add the BeeHIVE library to it, so the class will look like this:
+Let's create a new C\# script and call it _PongAI_. Add the script to the _AIPlayer_ object on the scene and open it up. This script will be the bridge between BeeHIVE and the _PongController_, so the first thing we need to do is to add the BeeHIVE library to it, so the class will look like this:
 
 ```
 using UnityEngine;
@@ -54,7 +54,7 @@ public class PongAI : MonoBehaviour {
 }
 ```
 
-Now we need to turn \textit{PongAI} into a BeeHIVE agent, simply by inheriting from a conveniently named class called \textit{BeeHIVEAgent}. Now your code should look something like this:
+Now we need to turn _PongAI_ into a BeeHIVE agent, simply by inheriting from a conveniently named class called _BeeHIVEAgent_. Now your code should look something like this:
 
 ```
 using UnityEngine;
@@ -75,9 +75,9 @@ public class PongAI : BeeHIVEAgent {
 }
 ```
 
-\textit{BeeHIVEAgent} is a very simple class, that aims to ensure that you have the proper setup without much work. If that inheritance ever gets in your way for some reason you can always copy that code directly into yours.
+_BeeHIVEAgent_ is a very simple class, that aims to ensure that you have the proper setup without much work. If that inheritance ever gets in your way for some reason you can always copy that code directly into yours.
 
-The next step is initialize BeeHIVE and whatever behavior associated with it. We have two ways of doing that, the first its overriding the \textit{Start} method and calling the base \textit{Start}, and the second way its to call a method called \textit{InitBeeHive} on your script, at the \textit{Start}. For sake of simplicity we are going with the second one. Your \textit{Start} method should look like this:
+The next step is initialize BeeHIVE and whatever behavior associated with it. We have two ways of doing that, the first its overriding the _Start_ method and calling the base _Start_, and the second way its to call a method called _InitBeeHive_ on your script, at the _Start_. For sake of simplicity we are going with the second one. Your _Start_ method should look like this:
 
 ```
 	void Start () {
@@ -85,7 +85,7 @@ The next step is initialize BeeHIVE and whatever behavior associated with it. We
 	}
 ```
 
-From now on you have a valid agent, all you need its to implement the actual actions that can be used on the system. If you save your code and get back to the editor, you will see some variables at the inspector, but don't worry about those now, we will get there. Last thing before we get to actions, is to get a reference to the \textit{PongController} script, so we can use it to move the player around. Doing that your \textit{Start} should look like this:
+From now on you have a valid agent, all you need its to implement the actual actions that can be used on the system. If you save your code and get back to the editor, you will see some variables at the inspector, but don't worry about those now, we will get there. Last thing before we get to actions, is to get a reference to the _PongController_ script, so we can use it to move the player around. Doing that your _Start_ should look like this:
 
 ```
     PongController pongController;
@@ -99,8 +99,8 @@ From now on you have a valid agent, all you need its to implement the actual act
 
 ### Implementing valid actions
 
-For a method to be recognizable as a valid action by BeeHIVE, the return type has to be a enum called \textit{BH\_Status}, which can assume values of \textit{BH\_Status.Success}, \textit{BH\_Status.Failure} and \textit{BH\_Status.Running}.
-The \textit{Success} is returned when a action successfully completed, and \textit{Failure} is the other way around. \textit{Running} is returned when the actions need more iterations to complete, or maybe do not complete at all. We will see examples of all of those.
+For a method to be recognizable as a valid action by BeeHIVE, the return type has to be a enum called _BH\_Status_, which can assume values of _BH\_Status.Success_, _BH\_Status.Failure_ and _BH\_Status.Running_.
+The _Success_ is returned when a action successfully completed, and _Failure_ is the other way around. _Running_ is returned when the actions need more iterations to complete, or maybe do not complete at all. We will see examples of all of those.
 
 Actions to move up and down are continuous, so there is never a point where it succeed or fail in this particular case, every time we call it, is always on running state. For that reason we can implement the move actions like this:
 
@@ -142,7 +142,7 @@ Remember to save your code, and get back to the editor.
 
 ### Building a tree
 
-Now for the fun part, we are going to create a tree to model the behavior of our opponent. Start by clicking \textit{Window / BeeHIVE Editor}, like shown on figure bellow.
+Now for the fun part, we are going to create a tree to model the behavior of our opponent. Start by clicking _Window / BeeHIVE Editor_, like shown on figure bellow.
 
 ![]
 (imagens/window.png)
@@ -155,7 +155,7 @@ The node editor will pop up, and if you get confused at any point, you can check
 
 
 If you don't already know, is recommended that you read a bit about tree structures, so you can have a full understanding of what i am talking about. 
-Anyway, in BeeHIVE, the trees are searched on a \textit{depth-first} fashion, and from left to right, a example of search order can be seen in figure bellow.the order in which we arrange the nodes, will carry meaning to the behavior.
+Anyway, in BeeHIVE, the trees are searched on a _depth-first_ fashion, and from left to right, a example of search order can be seen in figure bellow.the order in which we arrange the nodes, will carry meaning to the behavior.
 
 ![]
 (imagens/search.png)
@@ -169,9 +169,9 @@ At this point, leaves might have a text field for you to write the name of the m
 
 Note that after you selected a source the text-field turns into a drop-down list, in which you can easily select one of the actions.
 
-Now we want to check if the ball is above the agent, and if it is, we want the agent to move up. So we are going to select \textit{BallIsAbove} on the left node, and \textit{MoveUp} on the right node. 
+Now we want to check if the ball is above the agent, and if it is, we want the agent to move up. So we are going to select _BallIsAbove_ on the left node, and _MoveUp_ on the right node. 
 
-To connect both leaves we are going to create a sequence node ( the blue one with a arrow ), this node execute his children from left to right, and if any of them returns a \textit{Failure} status, the sequence node will stop the execution and will also return \textit{Failure} to its parent. If all the children returns a \textit{Success} status, the sequence node will also return \textit{Success} to its parent. Basically, the sequence node act like a AND gate.
+To connect both leaves we are going to create a sequence node ( the blue one with a arrow ), this node execute his children from left to right, and if any of them returns a _Failure_ status, the sequence node will stop the execution and will also return _Failure_ to its parent. If all the children returns a _Success_ status, the sequence node will also return _Success_ to its parent. Basically, the sequence node act like a AND gate.
 
 Add a sequence node and click the arrow at bottom of the node to initiate a connection. You will see a line being draw, and than you can click in one of the nodes to make a connection. Repeat the process for the other one, make sure it look like figure bellow.
 
@@ -181,12 +181,12 @@ Add a sequence node and click the arrow at bottom of the node to initiate a conn
 
 If you make any mistakes you can break a connection by clicking the arrow that sits on top of the node.
 
-At this point you can enter a name and click \textit{Save} to create a usable file for the agent. Open a folder called Trees, that is where all trees are saved, so you might be able to see the one you just created. Now select the AIPlayer object, and at the inspector of the \textit{PongAI} class you will see a property called \textit{Behavior Tree Obj}. Drag and drop your tree in that property to set it to this agent. 
+At this point you can enter a name and click _Save_ to create a usable file for the agent. Open a folder called Trees, that is where all trees are saved, so you might be able to see the one you just created. Now select the AIPlayer object, and at the inspector of the _PongAI_ class you will see a property called _Behavior Tree Obj_. Drag and drop your tree in that property to set it to this agent. 
 
 If you hit play now you can already see some reaction from AI, but it can only go up, lets fix that. 
 
 If you closed the BeeHIVE editor, open it up again, and load your blueprint using the property on the third section.
-Now we want to opposite action to happen when the ball is not above the agent, so we are going to create two more leaves, one will be \textit{MoveDown}, and the other will be \textit{BallIsAbove}, but this time we have to invert the result to make node return \textit{Success} when the ball is not above. To do that we will also need to add a inverter node (the first purple node on the tool bar). And to connect everything up we need another sequence node. Our tree should be something like figure  bellow.
+Now we want to opposite action to happen when the ball is not above the agent, so we are going to create two more leaves, one will be _MoveDown_, and the other will be _BallIsAbove_, but this time we have to invert the result to make node return _Success_ when the ball is not above. To do that we will also need to add a inverter node (the first purple node on the tool bar). And to connect everything up we need another sequence node. Our tree should be something like figure  bellow.
 
 ![]
 (imagens/conn2.png)
