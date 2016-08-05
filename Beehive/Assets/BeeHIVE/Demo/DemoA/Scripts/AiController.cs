@@ -22,7 +22,7 @@ public class AiController : BeeHIVEAgent {
 		steering = GetComponent<Steering> ();
 		sight = GetComponent<Sight> ();
 
-		InitBeeHive();
+		InitBeeHIVE();
 	}
 
 	void Update(){

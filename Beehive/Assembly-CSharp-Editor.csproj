@@ -73,7 +73,7 @@
  <HintPath>D:/Nilo/Unity5.3.4f1/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
  <Reference Include="BeeHIVE">
- <HintPath>D:/Nilo/UnityProjects/Beehive/Beehive/Assets/BeeHIVE/Plugins/BeeHIVE.dll</HintPath>
+ <HintPath>D:/Nilo/UnityProjects/BeeHIVE/Beehive/Assets/BeeHIVE/Plugins/BeeHIVE.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:/Nilo/Unity5.3.4f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

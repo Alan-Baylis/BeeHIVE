@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/BeeHIVE/Demo/demoScene.unity
+- path: Assets/BeeHIVE/Demo/TutorialDemo/Tutorial.unity
   isLoaded: 1
   isActive: 1

@@ -610,6 +610,8 @@ public class NodeEditor : EditorWindow {
 
 		btName = blueprint.name;
 
+		UpdateMethodOptions();
+
 	}
 
 	void DeleteBlueprint(){

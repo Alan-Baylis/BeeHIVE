@@ -48,9 +48,14 @@
      <Compile Include="Assets\BeeHIVE\Base\BeeHIVEAgent.cs" />
      <Compile Include="Assets\BeeHIVE\BeeHiveSys\BeeHIVELoader.cs" />
      <Compile Include="Assets\BeeHIVE\BeeHiveSys\ScriptableTree.cs" />
-     <Compile Include="Assets\BeeHIVE\Demo\Scripts\AiController.cs" />
-     <Compile Include="Assets\BeeHIVE\Demo\Scripts\Sight.cs" />
-     <Compile Include="Assets\BeeHIVE\Demo\Scripts\Steering.cs" />
+     <Compile Include="Assets\BeeHIVE\Demo\DemoA\Scripts\AiController.cs" />
+     <Compile Include="Assets\BeeHIVE\Demo\DemoA\Scripts\Sight.cs" />
+     <Compile Include="Assets\BeeHIVE\Demo\DemoA\Scripts\Steering.cs" />
+     <Compile Include="Assets\BeeHIVE\Demo\TutorialDemo\Scripts\Ball.cs" />
+     <Compile Include="Assets\BeeHIVE\Demo\TutorialDemo\Scripts\GameManager.cs" />
+     <Compile Include="Assets\BeeHIVE\Demo\TutorialDemo\Scripts\HumanPongController.cs" />
+     <Compile Include="Assets\BeeHIVE\Demo\TutorialDemo\Scripts\PongAI_Finished.cs" />
+     <Compile Include="Assets\BeeHIVE\Demo\TutorialDemo\Scripts\PongController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Nilo/Unity5.3.4f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -58,7 +63,7 @@
  <HintPath>D:/Nilo/Unity5.3.4f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="BeeHIVE">
- <HintPath>D:/Nilo/UnityProjects/Beehive/Beehive/Assets/BeeHIVE/Plugins/BeeHIVE.dll</HintPath>
+ <HintPath>D:/Nilo/UnityProjects/BeeHIVE/Beehive/Assets/BeeHIVE/Plugins/BeeHIVE.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
